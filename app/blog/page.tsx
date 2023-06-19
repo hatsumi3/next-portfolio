@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { FC } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export type BlogType = {
   frontmatter: {
@@ -45,6 +46,16 @@ const Blog: FC = async () => {
             <h2>{blog.frontmatter.title}</h2>
             <p>{blog.frontmatter.date}</p>
             <Link href={`/blog/${blog.slug}`}>Read More</Link>
+            <div>
+              <Image
+                src={blog.frontmatter.image}
+                alt="card-image"
+                height={300}
+                width={1000}
+                quality={90}
+                priority={true}
+              />
+            </div>
           </div>
         );
       })}
