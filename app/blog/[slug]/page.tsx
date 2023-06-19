@@ -1,6 +1,3 @@
-import fs from "fs";
-import path from "path";
-
 import matter from "gray-matter";
 import { FC } from "react";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
