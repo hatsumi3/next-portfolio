@@ -11,6 +11,14 @@ export async function generateStaticParams(): Promise<string[]> {
   return paths;
 }
 
+export async function generateMetadata(props: singleBlogProps) {
+  const { singleDocument } = await getSingleBlog(props);
+  return {
+    title: singleDocument.data.title,
+    description: singleDocument.data.excerpt,
+  };
+}
+
 type singleBlogProps = {
   params: {
     slug: string;
